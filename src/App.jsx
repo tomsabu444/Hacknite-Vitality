@@ -8,6 +8,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/student-mark" element={<Studentmarks />} />
         </Routes>
       </BrowserRouter>
     </>
