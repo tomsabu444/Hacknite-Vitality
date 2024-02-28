@@ -1,7 +1,4 @@
-
-import React from "react";
 import Navbar from "../component/Navbar";
-
 import React, { useState } from "react";
 import "./Home.css";
 import { openPopup } from "./App.js";
@@ -12,8 +9,6 @@ function Home() {
     <>
 
       <Navbar />
-      <div></div>
-
       <section className="home">
         <img src="src/assets/mount2.png" className="mount2" alt="mount2" />
         <img src="src/assets/mount1.png" className="mount1" alt="mount1" />
