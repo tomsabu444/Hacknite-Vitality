@@ -121,17 +121,22 @@ function Home() {
           </p>
         </div>
       </section>
-      <section className="services">
-        <div className="conts">
-          <img src="src/assets/" alt="" className="link" />
-        </div>
-        <div className="wwr">
-          <h3>Automatic Answer Checker</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo
-            quidem sequi, ducimus eaque beatae sapiente. Necessitatibus sapiente
-            ipsam aut cumque!
-          </p>
+      <section class="services">
+        <h1>Our Services</h1>
+        <div class="smain">
+          <div class="container">
+            <div class="imgcontainer">
+              <img id="imageLink" src="src/assets/icon.png" alt="services" />
+            </div>
+            <div class="ww">
+              <h3 id="heading">sgdjdkdlk</h3>
+              <p id="description">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Reiciendis exercitationem vitae omnis enim rerum a magnam, modi
+                pariatur explicabo nihil earum veritatis laudantium?
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </>
