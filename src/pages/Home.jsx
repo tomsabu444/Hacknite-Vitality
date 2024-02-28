@@ -3,18 +3,16 @@ import React, { useState } from "react";
 import "./Home.css";
 import { openPopup } from "./App.js";
 
-
 function Home() {
   return (
     <>
-
       <Navbar />
       <section className="home">
         <img src="src/assets/mount2.png" className="mount2" alt="mount2" />
         <img src="src/assets/mount1.png" className="mount1" alt="mount1" />
         <img src="src/assets/bush2.png" className="bush2" alt="bush2" />
         <img src="src/assets/bush1.png" className="bush1" alt="bush1" />
-        <h1 className="title">Website name</h1>
+        <h1 className="title">Checkit</h1>
         <div className="mmmm">
           <button className="btn" type="button" onClick={openPopup}>
             Start Now
@@ -122,10 +120,14 @@ function Home() {
             <div class="ww">
               <h3 id="heading">AI-Powered Intelligent Grading System</h3>
               <p id="description">
-              Revolutionizing answer script evaluation, our system employs advanced AI, NLP algorithms, and machine learning for precise, evolving grading.
-              Educators benefit from streamlined processes and transparent justifications; students receive personalized feedback, fostering engagement.
-              Institutions enjoy a comprehensive assessment solution for data-driven decisions.
-              The system integrates seamlessly, promising continuous improvement and academic excellence.
+                Revolutionizing answer script evaluation, our system employs
+                advanced AI, NLP algorithms, and machine learning for precise,
+                evolving grading. Educators benefit from streamlined processes
+                and transparent justifications; students receive personalized
+                feedback, fostering engagement. Institutions enjoy a
+                comprehensive assessment solution for data-driven decisions. The
+                system integrates seamlessly, promising continuous improvement
+                and academic excellence.
               </p>
             </div>
           </div>
