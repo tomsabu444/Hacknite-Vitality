@@ -10,7 +10,6 @@ function App() {
           <Route exact path="/" element={<Home />} />
         </Routes>
       </BrowserRouter>
-      <Home />
     </>
   );
 }
