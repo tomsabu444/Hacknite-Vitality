@@ -69,7 +69,8 @@ function Home() {
             Title: AI-Powered Intelligent Grading System for Enhanced
             Educational Assessment
           </h4>
-          <p>
+          <br />
+          <p class="abb">
             This abstract introduces a groundbreaking concept for an AI-Powered
             Intelligent Grading System, designed to revolutionize the
             traditional approach to evaluating answer scripts. By leveraging
