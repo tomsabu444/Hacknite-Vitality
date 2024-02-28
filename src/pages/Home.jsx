@@ -26,45 +26,17 @@ function Home() {
               </div>
               <div className="inst">
                 <h1>INSTRUCTIONS</h1>
+                <span>Guidelines for Uploading and Processing Exam Papers</span>
                 <p>
-                  <span>Ensure Legibility:</span> Make sure the exam paper is
-                  clear and legible. Illegible handwriting or blurry text may
-                  result in inaccuracies in grading. <br />
-                  <span>Use Standard Formats:</span> Upload the exam paper in a
-                  standard digital format such as PDF or image files (JPEG, PNG,
-                  etc.). Ensure that the entire paper is visible and not cropped
-                  or cut off. <br />
-                  <span>Single Document Upload:</span> Upload one exam paper at
-                  a time. Avoid uploading multiple papers simultaneously to
-                  prevent confusion and ensure accurate processing. <br />
-                  <span>Check for Completeness:</span> Verify that all pages of
-                  the exam paper are included in the upload. Missing pages can
-                  lead to incomplete grading. <br />
-                  <span>Follow Naming Conventions:</span> If there are specific
-                  naming conventions or instructions for naming the files,
-                  adhere to them. This helps in organizing and processing the
-                  uploaded papers efficiently. <br />
-                  <span>Review Guidelines:</span> Familiarize yourself with any
-                  specific guidelines or requirements provided by the automatic
-                  exam paper checker. Follow these guidelines to ensure smooth
-                  processing and accurate results. <br />
-                  <span>Privacy and Security:</span> Be mindful of any sensitive
-                  information present on the exam paper, such as student names
-                  or identification numbers. Ensure that such information is
-                  appropriately redacted or anonymized before uploading. <br />
-                  <span>Submit Corrections:</span> If any errors are identified
-                  after uploading, follow the designated procedure for
-                  submitting corrections or revisions. This may involve
-                  re-uploading the corrected version of the exam paper. <br />
-                  <span>Patience During Processing:</span> Understand that the
-                  automatic exam paper checker may take some time to process and
-                  grade the uploaded papers, especially during peak periods. Be
-                  patient and wait for the results to be generated. <br />
-                  <span>Contact Support if Needed:</span> If you encounter any
-                  technical issues or have questions about the uploading
-                  process, don't hesitate to contact customer support for
-                  assistance. They are there to help you navigate any challenges
-                  you may encounter.
+               - Ensure the exam paper is clear and legible.<br/>
+               - Upload the exam paper in a standard digital format, such as JPEG or PNG.<br/>
+               - Make sure the entire paper is visible and not cropped or cut off.<br/>
+               - Upload one exam paper at a time.<br/>
+               - Verify that all pages of the exam paper are included in the upload.<br/>
+               - Follow the provided guidelines to ensure smooth processing and accurate results.<br/>
+               - Understand that the automatic exam paper checker may take some time to process and grade the uploaded papers.<br/>
+               - Be patient and wait for the results to be generated.<br/>
+               - In case of any technical issues or questions about the uploading process, contact customer support for assistance.<br/>
                 </p>
               </div>
             </div>
