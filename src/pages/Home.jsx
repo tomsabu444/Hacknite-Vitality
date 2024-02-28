@@ -2,6 +2,7 @@ import Navbar from "../component/Navbar";
 import React, { useState } from "react";
 import "./Home.css";
 import { openPopup } from "./Appp.js";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -22,7 +23,7 @@ function Home() {
               <div className="continue">
                 <div className="cont">
                   <button className="conttttt">
-                    <a href="draganddrop.html">Continue</a>
+                    <Link to="/upload">Continue</Link>
                   </button>
                 </div>
               </div>
