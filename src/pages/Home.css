@@ -147,3 +147,11 @@ button {
   max-width: 700px;
   text-align: center;
 }
+footer {
+  align-items: center;
+  height: 40vh;
+  display: flex;
+  justify-content: space-around;
+  background: linear-gradient(to right, #2d2d2dd3, #3b3c3c);
+  color: white;
+}
