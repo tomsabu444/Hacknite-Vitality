@@ -105,3 +105,36 @@ button {
   overflow: hidden;
   overflow-y: scroll;
 }
+.services {
+  background: linear-gradient(#3b3291, #286ea4);
+  z-index: 102;
+  top: -5%;
+  position: relative;
+  height: 80dvh;
+}
+.smain {
+  display: flex;
+  justify-content: center;
+}
+.ww {
+  padding: 60px 0;
+  text-align: center;
+}
+.services h1 {
+  text-align: center;
+  font-size: 2.7rem;
+  color: white;
+  padding: 1.4rem 0;
+}
+.imgcontainer {
+  margin: 0 auto;
+  height: 300px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgb(146, 143, 143), rgba(0, 0, 0, 0.356));
+  position: relative;
+  border-radius: 100%;
+  box-shadow: 3px 3px 8px black;
+}
