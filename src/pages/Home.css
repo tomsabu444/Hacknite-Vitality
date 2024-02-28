@@ -33,3 +33,64 @@
   transform: translate(-50%);
   box-shadow: 0px 0px 6px linear-gradient(to right, #79d6e9, #5c6bc0);
 }
+.writtings {
+  padding: 50px;
+}
+.writtings h3 {
+  font-size: 2rem;
+  padding: 50px 0;
+}
+.leaf {
+  z-index: 101;
+}
+.about {
+  background: #3b3291;
+  color: white;
+  position: relative;
+  z-index: 100;
+}
+.about img {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  filter: grayscale(100);
+  margin-top: 50px;
+}
+.main {
+  position: absolute;
+  top: 7%;
+  left: 35%;
+  visibility: hidden;
+  transition: 0.4s all;
+}
+.open-popup {
+  visibility: visible;
+  top: 10%;
+}
+span {
+  font-weight: bold;
+}
+.continue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+}
+button {
+  border: none;
+  outline: none;
+  margin: 0 30px;
+}
+.conttttt a {
+  text-decoration: none;
+  padding: 10px 20px;
+  background: linear-gradient(#333, #111);
+  color: white;
+  font-weight: bolder;
+  border-radius: 10px;
+  border: none;
+}
+.inst {
+  overflow: hidden;
+  overflow-y: scroll;
+}
