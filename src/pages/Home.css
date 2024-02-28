@@ -128,7 +128,7 @@ button {
   z-index: 102;
   top: -5%;
   position: relative;
-  height: 90dvh;
+  height: auto;
 }
 .smain {
   display: flex;
