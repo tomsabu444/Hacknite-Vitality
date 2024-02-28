@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Upload.css";
-import {} from "./App.js";
 
 const Upload = () => {
   return (
@@ -26,9 +25,7 @@ const Upload = () => {
         </div>
         <div className="btnn">
           <button>
-            <a href="">
-              <i className="fa-solid fa-cloud-arrow-up"></i> Submit
-            </a>
+            <a href="">Submit</a>
           </button>
         </div>
       </div>
