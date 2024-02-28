@@ -135,10 +135,11 @@ function Home() {
       </section>
       <footer>
         <div className="ffmain">
-          <h1>Logo</h1>
+          <h1>Checkit</h1>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum
-            fuga, quidem culpa ab aliquid quisquam!
+            Revolutionizing answer script evaluation, our system employs
+            advanced AI, NLP algorithms, and machine learning for precise,
+            evolving grading
           </p>
         </div>
         <div className="team">

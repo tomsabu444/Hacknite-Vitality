@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <>
       <nav>
-        <h1>Logo</h1>
+        <h1>Checkit</h1>
         <div class="navv">
           <ul>
             <li>
