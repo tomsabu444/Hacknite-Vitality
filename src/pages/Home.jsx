@@ -116,11 +116,12 @@ function Home() {
               <img id="imageLink" src="src/assets/icon.png" alt="services" />
             </div>
             <div class="ww">
-              <h3 id="heading">Automatic Answer Checker</h3>
+              <h3 id="heading">AI-Powered Intelligent Grading System</h3>
               <p id="description">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Reiciendis exercitationem vitae omnis enim rerum a magnam, modi
-                pariatur explicabo nihil earum veritatis laudantium?
+              Revolutionizing answer script evaluation, our system employs advanced AI, NLP algorithms, and machine learning for precise, evolving grading.
+              Educators benefit from streamlined processes and transparent justifications; students receive personalized feedback, fostering engagement.
+              Institutions enjoy a comprehensive assessment solution for data-driven decisions.
+              The system integrates seamlessly, promising continuous improvement and academic excellence.
               </p>
             </div>
           </div>
