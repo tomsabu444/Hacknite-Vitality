@@ -28,15 +28,30 @@ function Home() {
                 <h1>INSTRUCTIONS</h1>
                 <span>Guidelines for Uploading and Processing Exam Papers</span>
                 <p>
-               - Ensure the exam paper is clear and legible.<br/>
-               - Upload the exam paper in a standard digital format, such as JPEG or PNG.<br/>
-               - Make sure the entire paper is visible and not cropped or cut off.<br/>
-               - Upload one exam paper at a time.<br/>
-               - Verify that all pages of the exam paper are included in the upload.<br/>
-               - Follow the provided guidelines to ensure smooth processing and accurate results.<br/>
-               - Understand that the automatic exam paper checker may take some time to process and grade the uploaded papers.<br/>
-               - Be patient and wait for the results to be generated.<br/>
-               - In case of any technical issues or questions about the uploading process, contact customer support for assistance.<br/>
+                  - Ensure the exam paper is clear and legible.
+                  <br />
+                  - Upload the exam paper in a standard digital format, such as
+                  JPEG or PNG.
+                  <br />
+                  - Make sure the entire paper is visible and not cropped or cut
+                  off.
+                  <br />
+                  - Upload one exam paper at a time.
+                  <br />
+                  - Verify that all pages of the exam paper are included in the
+                  upload.
+                  <br />
+                  - Follow the provided guidelines to ensure smooth processing
+                  and accurate results.
+                  <br />
+                  - Understand that the automatic exam paper checker may take
+                  some time to process and grade the uploaded papers.
+                  <br />
+                  - Be patient and wait for the results to be generated.
+                  <br />
+                  - In case of any technical issues or questions about the
+                  uploading process, contact customer support for assistance.
+                  <br />
                 </p>
               </div>
             </div>
@@ -111,6 +126,23 @@ function Home() {
           </div>
         </div>
       </section>
+      <footer>
+        <div className="ffmain">
+          <h1>Logo</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum
+            fuga, quidem culpa ab aliquid quisquam!
+          </p>
+        </div>
+        <div className="team">
+          <h2>TEAM</h2>
+          <br />
+          Jishnu Mohan <br />
+          Justin James <br />
+          Tom Sabu <br />
+          Akash Pradeep
+        </div>
+      </footer>
     </>
   );
 }
