@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import "./Home.css";
+import { openPopup } from "./App.js";
 
 function Home() {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-  const openPopup = () => {
-    setIsPopupOpen(true);
-  };
   return (
     <>
       <section className="home">
