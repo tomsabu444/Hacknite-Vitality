@@ -138,3 +138,12 @@ button {
   border-radius: 100%;
   box-shadow: 3px 3px 8px black;
 }
+.imgcontainer img {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+}
+.smain p {
+  max-width: 700px;
+  text-align: center;
+}
