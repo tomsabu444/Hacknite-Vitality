@@ -135,11 +135,7 @@ function Home() {
       </section>
       <footer>
         <div className="ffmain">
-          <h1>Logo</h1>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum
-            fuga, quidem culpa ab aliquid quisquam!
-          </p>
+          <h1>Checkit</h1>
         </div>
         <div className="team">
           <h2>TEAM</h2>
