@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-function Upload() {
-  const [fileName1, setFileName1] = useState("");
-  const [fileName2, setFileName2] = useState("");
+function Teacher() {
+  const [fileName, setFileName] = useState("");
 
-  const handleFileUpload = (files, setFileName) => {
+  const handleFileUpload = (files) => {
     if (files.length > 0) {
       const file = files[0];
       setFileName(file.name);
@@ -39,62 +38,24 @@ function Upload() {
                   document
                     .getElementById("dropZone1")
                     .classList.remove("highlight");
-                  handleFileUpload(event.dataTransfer.files, setFileName1);
+                  handleFileUpload(event.dataTransfer.files);
                 }}
                 onClick={() => document.getElementById("fileInput1").click()}
               >
-                {fileName1 ? fileName1 : "Click here or drop an image"}
+                {fileName ? fileName : "Click here or drop an image"}
               </div>
-              <div className="fileName">{fileName1}</div>
+              <div className="fileName">{fileName}</div>
               <input
                 type="file"
                 className="fileInput"
                 id="fileInput1"
-                onChange={(event) =>
-                  handleFileUpload(event.target.files, setFileName1)
-                }
-              />
-            </div>
-            <div className="container2">
-              <h3>Upload Students Answer Sheet</h3>
-              <div
-                className="dropZone"
-                onDragOver={(event) => event.preventDefault()}
-                onDragEnter={() =>
-                  document
-                    .getElementById("dropZone2")
-                    .classList.add("highlight")
-                }
-                onDragLeave={() =>
-                  document
-                    .getElementById("dropZone2")
-                    .classList.remove("highlight")
-                }
-                onDrop={(event) => {
-                  event.preventDefault();
-                  document
-                    .getElementById("dropZone2")
-                    .classList.remove("highlight");
-                  handleFileUpload(event.dataTransfer.files, setFileName2);
-                }}
-                onClick={() => document.getElementById("fileInput2").click()}
-              >
-                {fileName2 ? fileName2 : "Click here or drop an image"}
-              </div>
-              <div className="fileName">{fileName2}</div>
-              <input
-                type="file"
-                className="fileInput"
-                id="fileInput2"
-                onChange={(event) =>
-                  handleFileUpload(event.target.files, setFileName2)
-                }
+                onChange={(event) => handleFileUpload(event.target.files)}
               />
             </div>
           </div>
           <div className="btnn">
             <button>
-              <a href="/">Submit</a>
+              <a href="/student">Submit</a>
             </button>
           </div>
         </div>
@@ -103,7 +64,7 @@ function Upload() {
   );
 }
 
-export default Upload;
+export default Teacher;
 
 const Container = styled.div`
   * {

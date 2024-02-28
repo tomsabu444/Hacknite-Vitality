@@ -23,7 +23,7 @@ function Home() {
               <div className="continue">
                 <div className="cont">
                   <button className="conttttt">
-                    <Link to="/upload">Continue</Link>
+                    <Link to="/teacher">Continue</Link>
                   </button>
                 </div>
               </div>
