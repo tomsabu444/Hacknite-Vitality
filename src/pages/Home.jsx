@@ -129,7 +129,7 @@ function Home() {
               <img id="imageLink" src="src/assets/icon.png" alt="services" />
             </div>
             <div class="ww">
-              <h3 id="heading">sgdjdkdlk</h3>
+              <h3 id="heading">Automatic Answer Checker</h3>
               <p id="description">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Reiciendis exercitationem vitae omnis enim rerum a magnam, modi
