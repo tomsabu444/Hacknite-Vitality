@@ -12,7 +12,7 @@ function Home() {
         <img src="src/assets/mount1.png" className="mount1" alt="mount1" />
         <img src="src/assets/bush2.png" className="bush2" alt="bush2" />
         <img src="src/assets/bush1.png" className="bush1" alt="bush1" />
-        <h1 className="title">Checkit</h1>
+        <div className="logoimg"></div>
         <div className="mmmm">
           <button className="btn" type="button" onClick={openPopup}>
             Start Now
