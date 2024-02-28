@@ -121,6 +121,19 @@ function Home() {
           </p>
         </div>
       </section>
+      <section className="services">
+        <div className="conts">
+          <img src="src/assets/" alt="" className="link" />
+        </div>
+        <div className="wwr">
+          <h3>Automatic Answer Checker</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo
+            quidem sequi, ducimus eaque beatae sapiente. Necessitatibus sapiente
+            ipsam aut cumque!
+          </p>
+        </div>
+      </section>
     </>
   );
 }
