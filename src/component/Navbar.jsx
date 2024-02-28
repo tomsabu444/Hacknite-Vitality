@@ -5,27 +5,29 @@ import { FiLogIn } from "react-icons/fi";
 function Navbar() {
   return (
     <>
-      <div className="nav">
-        <h1>LOGO</h1>
-        <ul>
-          <li>
-            <a href="#" id="one">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Services</a>
-          </li>
-          <li>
-            <a href="#" className="login">
-              <FiLogIn />
-            </a>
-          </li>
-        </ul>
-      </div>
+      <nav>
+        <h1>Logo</h1>
+        <div class="navv">
+          <ul>
+            <li>
+              <a href="#" id="one">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Services</a>
+            </li>
+            <li>
+              <a href="login.html" class="login">
+                <FiLogIn />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </>
   );
 }

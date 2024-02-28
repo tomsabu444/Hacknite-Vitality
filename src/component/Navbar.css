@@ -6,7 +6,7 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
-.nav {
+nav {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -16,6 +16,7 @@
 }
 li {
   display: inline;
+  padding: 0px 20px;
 }
 a {
   text-decoration: none;
@@ -33,8 +34,9 @@ a#one {
   color: white;
   background: linear-gradient(to right, #79d6e9, #5c6bc0);
 }
-.FiLogIn {
+.login {
   font-size: 1.66rem;
+  font-weight: bold;
 }
 a.login:hover {
   color: grey;
