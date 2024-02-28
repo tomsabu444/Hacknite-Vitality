@@ -12,7 +12,7 @@ function Home() {
         <img src="src/assets/mount1.png" className="mount1" alt="mount1" />
         <img src="src/assets/bush2.png" className="bush2" alt="bush2" />
         <img src="src/assets/bush1.png" className="bush1" alt="bush1" />
-        <div className="logoimg"></div>
+        <h1 className="title">Checkit</h1>
         <div className="mmmm">
           <button className="btn" type="button" onClick={openPopup}>
             Start Now
@@ -135,7 +135,11 @@ function Home() {
       </section>
       <footer>
         <div className="ffmain">
-          <h1>Checkit</h1>
+          <h1>Logo</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum
+            fuga, quidem culpa ab aliquid quisquam!
+          </p>
         </div>
         <div className="team">
           <h2>TEAM</h2>
