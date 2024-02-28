@@ -110,7 +110,7 @@ button {
   z-index: 102;
   top: -5%;
   position: relative;
-  height: 80dvh;
+  height: 90dvh;
 }
 .smain {
   display: flex;
@@ -141,6 +141,7 @@ button {
 .imgcontainer img {
   height: 200px;
   width: 200px;
+  left: 23%;
   position: absolute;
 }
 .smain p {
@@ -154,4 +155,7 @@ footer {
   justify-content: space-around;
   background: linear-gradient(to right, #2d2d2dd3, #3b3c3c);
   color: white;
+}
+footer p {
+  max-width: 280px;
 }
