@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./Navbar.css";
 import { FiLogIn } from "react-icons/fi";
 
@@ -31,5 +30,6 @@ function Navbar() {
       </nav>
     </>
   );
-  }
+}
+
 export default Navbar;
