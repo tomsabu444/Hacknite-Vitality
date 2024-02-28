@@ -1,10 +1,11 @@
 import React from "react";
 import "./Navbar.css";
+import { FiLogIn } from "react-icons/fi";
 
 function Navbar() {
   return (
     <>
-      <div>
+      <div className="nav">
         <h1>LOGO</h1>
         <ul>
           <li>
@@ -20,7 +21,7 @@ function Navbar() {
           </li>
           <li>
             <a href="#" className="login">
-              <i className="fa-solid fa-right-to-bracket"></i>
+              <FiLogIn />
             </a>
           </li>
         </ul>
