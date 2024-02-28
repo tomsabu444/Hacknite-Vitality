@@ -408,7 +408,7 @@ const Container = styled.div`
   }
 
   .it {
-    border: 2px solid black;
+   
     overflow: hidden;
     border-radius: 17px;
     height: 270px;
