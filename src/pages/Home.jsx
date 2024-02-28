@@ -1,7 +1,7 @@
 import Navbar from "../component/Navbar";
 import React, { useState } from "react";
 import "./Home.css";
-import { openPopup } from "./App.js";
+import { openPopup } from "./Appp.js";
 
 function Home() {
   return (
