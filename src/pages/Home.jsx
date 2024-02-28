@@ -151,6 +151,14 @@ function Home() {
           Tom Sabu <br />
           Akash Pradeep
         </div>
+        <div className="connect">
+          <h2>CONNECT</h2>
+          <br />
+          Instagram <br />
+          Email <br />
+          Github <br />
+          LinkedIn
+        </div>
       </footer>
     </>
   );
