@@ -2,21 +2,21 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-@app.route('/check_semantic_characters', methods=['POST'])
-def check_semantic_characters():
-    try:
-        # Assuming the frontend sends JSON data with the text under the key 'text'
-        text = request.json['text']
+@app.route('/process_image_data', methods=['POST'])
+def process_image_data():
+    data = request.get_json()
+    text = data['text']  
 
-        # Perform semantic character checking here
-        # Replace this with your actual semantic character checking logic
+    print("Received text: ", text) # Print the text to the console
 
-        # For demonstration, just echo back the received text
-        result = {'text': text, 'semantic_check_passed': True}
+    # Your text processing logic here:
+    processed_text = process_text(text)  # Replace with your processing function
 
-        return jsonify(result), 200
-    except Exception as e:
-        return jsonify({'error': str(e)}), 400
+    return jsonify({'status': 'success', 'processed_text': processed_text})
+
+def process_text(text):
+    # Example: Simply reverse the text for demonstration
+    return text[::-1] 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=6000, debug=True) # Host on 0.0.0.0 to allow connections

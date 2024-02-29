@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { useState } from "react";
 import styled from "styled-components";
-// import axios from "axios"
+import axios from "axios"
 
 function ImageToOcr() {
   const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
@@ -25,17 +25,13 @@ function ImageToOcr() {
         ...imageParts,
       ]);
       const text = result.response.text();
+      const response_text = text;
 
        // Send the text response to the Flask server using Axios
-    // const response = await axios.post('http://127.0.0.1:6000/process_image_data', {
-    //   text: text 
-    // });
+    const response = await axios.post('http://127.0.0.1:6000/process_image_data', {
+      text: response_text
+    });
 
-    // if (response.status === 200) {
-    //   console.log("Data sent to Flask backend successfully!");
-    // } else {
-    //   console.error("Error sending data to backend", response);
-    // }
 
 
       setLoading(false);
