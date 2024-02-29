@@ -1,5 +1,4 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { log } from "console";
 import { useState } from "react";
 import styled from "styled-components";
 
