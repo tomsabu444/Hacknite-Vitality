@@ -1,4 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { log } from "console";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -25,6 +26,18 @@ function ImageToOcr() {
       ]);
       const text = result.response.text();
 
+       // Send the text response to the Flask server using Axios
+    const response = await axios.post('http://127.0.0.1:6000/process_image_data', {
+      text: text 
+    });
+
+    if (response.status === 200) {
+      console.log("Data sent to Flask backend successfully!");
+    } else {
+      console.error("Error sending data to backend", response);
+    }
+
+
       setLoading(false);
       setData(text);
     } catch (error) {
@@ -32,6 +45,7 @@ function ImageToOcr() {
       console.error("fetchDataFromGeminiAPI error: ", error);
     }
   }
+
 
   async function fileToGenerativePart(file) {
     const base64EncodedDataPromise = new Promise((resolve) => {
