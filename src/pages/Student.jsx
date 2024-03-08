@@ -1,171 +1,102 @@
-import React, { useState } from "react";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import { useState } from "react";
 import styled from "styled-components";
 
-function Student() {
-  const [students, setStudents] = useState([{ id: "", file: "" }]);
+function ImageToOcr() {
+  const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+  const FIXED_INPUT_TEXT = import.meta.env.VITE_FIXED_INPUT_TEXT; // Load from env
+  const [data, setData] = useState(undefined);
+  const [loading, setLoading] = useState(false);
 
-  const handleFileUpload = (file, index) => {
-    const updatedStudents = [...students];
-    updatedStudents[index].file = file;
-    setStudents(updatedStudents);
-  };
+  async function fetchDataFromGeminiProVisionAPI() {
+    try {
+      setLoading(true);
+      const genAI = new GoogleGenerativeAI(API_KEY);
+      const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
 
-  const handleAddStudent = () => {
-    setStudents([...students, { id: "", file: "" }]);
-  };
+      const fileInputEl = document.querySelector("input[type=file]");
+      const imageParts = await Promise.all(
+        [...fileInputEl.files].map(fileToGenerativePart)
+      );
+      const result = await model.generateContent([
+        FIXED_INPUT_TEXT,
+        ...imageParts,
+      ]);
+      const text = result.response.text();
 
-  const handleStudentIdChange = (event, index) => {
-    const updatedStudents = [...students];
-    updatedStudents[index].id = event.target.value;
-    setStudents(updatedStudents);
-  };
+      setLoading(false);
+      setData(text);
 
-  const handleRemoveStudent = (index) => {
-    const updatedStudents = [...students];
-    updatedStudents.splice(index, 1);
-    setStudents(updatedStudents);
-  };
+      // Save data to text file
+      saveDataToFile(text);
+    } catch (error) {
+      setLoading(false);
+      console.error("fetchDataFromGeminiAPI error: ", error);
+    }
+  }
+
+  async function fileToGenerativePart(file) {
+    const base64EncodedDataPromise = new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result.split(",")[1]);
+      reader.readAsDataURL(file);
+    });
+    return {
+      inlineData: { data: await base64EncodedDataPromise, mimeType: file.type },
+    };
+  }
+
+  function saveDataToFile(data) {
+    const blob = new Blob([data], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "StudentAnswersheet.txt";
+    document.body.appendChild(a);
+    a.click();
+    URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+  }
 
   return (
-    <Container>
-      <div className="main-container">
-        <div className="container">
-          <div className="inn">
-            {students.map((student, index) => (
-              <div className="container1" key={index}>
-                <h3>Upload Student Answer Sheet</h3>
-                <input
-                  type="text"
-                  placeholder="Student ID"
-                  value={student.id}
-                  onChange={(e) => handleStudentIdChange(e, index)}
-                />
-                <div
-                  className="dropZone"
-                  onDragOver={(event) => event.preventDefault()}
-                  onDragEnter={() =>
-                    document
-                      .getElementById(`dropZone${index}`)
-                      .classList.add("highlight")
-                  }
-                  onDragLeave={() =>
-                    document
-                      .getElementById(`dropZone${index}`)
-                      .classList.remove("highlight")
-                  }
-                  onDrop={(event) => {
-                    event.preventDefault();
-                    document
-                      .getElementById(`dropZone${index}`)
-                      .classList.remove("highlight");
-                    handleFileUpload(event.dataTransfer.files[0], index);
-                  }}
-                  onClick={() =>
-                    document.getElementById(`fileInput${index}`).click()
-                  }
-                >
-                  {student.file
-                    ? student.file.name
-                    : "Click here or drop an image"}
-                </div>
-                <div className="fileName">{student.file.name}</div>
-                <input
-                  type="file"
-                  className="fileInput"
-                  id={`fileInput${index}`}
-                  onChange={(event) =>
-                    handleFileUpload(event.target.files[0], index)
-                  }
-                />
-                <button onClick={() => handleRemoveStudent(index)}>
-                  Remove Student
-                </button>
-              </div>
-            ))}
-          </div>
-          <div className="btnn">
-            <button onClick={handleAddStudent}>Add Student</button>
-          </div>
+    <>
+      <Container>
+        {/* ... (Other parts of your component) */}
+
+        <div className="card">
+          <input type="file" />
+          {/* Input text field removed */}
+
+          <button
+            disabled={loading}
+            onClick={() => fetchDataFromGeminiProVisionAPI()}
+          >
+            {loading ? "Loading..." : "Submit Button"}
+          </button>
+          <hr />
+          <div>Response: {data}</div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </>
   );
 }
 
-export default Student;
+export default ImageToOcr;
 
 const Container = styled.div`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-  }
-  body {
-    background: linear-gradient(to right, #79d6e9be, #5c6bc0a1);
-  }
-  .main-container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .inn {
-    display: flex;
-    justify-content: space-around;
-  }
-  .container {
-    background: rgba(163, 221, 230, 0.753);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  height: 100vh; /* Make container take full viewport height */
+  width: 100%; /* Make container take full viewport width */
+  padding: 20px;
+
+  .card {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 20px;
-  }
-  .container1 {
-    margin: 30px;
-  }
-  .dropZone {
-    width: 300px;
-    height: 300px;
-    border: 2px dashed #000000;
+    border-radius: 5px;
     text-align: center;
-    line-height: 300px;
-    margin: 20px auto;
-    cursor: pointer;
-  }
-  .dropZone.highlight {
-    border-color: #028002;
-  }
-  .fileInput {
-    display: none;
-  }
-  h3 {
-    color: #373535;
-    margin-bottom: 2.3rem;
-    font-size: 1.45rem;
-  }
-  button {
-    outline: none;
-    border: none;
-    background-color: transparent;
-  }
-  a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 10px 20px;
-    background: linear-gradient(#333, #111);
-    border-radius: 15px;
-  }
-  .btnn {
-    display: flex;
-    justify-content: center;
   }
 `;

@@ -1,8 +1,8 @@
 import React from "react";
 import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Teacher from "./pages/Teacher";
 import Student from "./pages/Student";
+import Teacher from "./pages/Teacher";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/teacher" element={<Teacher />} />
+          <Route exact path="/teacher" element={<Teacher/>} />
           <Route exact path="/student" element={<Student />} />
         </Routes>
       </BrowserRouter>
