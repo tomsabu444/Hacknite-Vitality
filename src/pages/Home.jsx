@@ -13,7 +13,7 @@ function Home() {
         <img src="src/assets/mount1.png" className="mount1" alt="mount1" />
         <img src="src/assets/bush2.png" className="bush2" alt="bush2" />
         <img src="src/assets/bush1.png" className="bush1" alt="bush1" />
-        <h1 className="title">Checkit</h1>
+        <h1 className="title">ScanScore</h1>
         <div className="mmmm">
           <button className="btn" type="button" onClick={openPopup}>
             Start Now
@@ -137,7 +137,7 @@ function Home() {
       </section>
       <footer>
         <div className="ffmain">
-          <h1>Checkit</h1>
+          <h1>ScanScore</h1>
           <p>
             Revolutionizing answer script evaluation, our system employs
             advanced AI, NLP algorithms, and machine learning for precise,
@@ -150,7 +150,8 @@ function Home() {
           Jishnu Mohan <br />
           Justin James <br />
           Tom Sabu <br />
-          Akash Pradeep
+          Navaneeth Krishna <br />
+          Joe Gisto
         </div>
         <div className="connect">
           <h2>CONNECT</h2>
