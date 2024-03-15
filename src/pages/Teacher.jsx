@@ -75,7 +75,7 @@ function Teacher() {
           disabled={loading}
           onClick={() => fetchDataFromGeminiProVisionAPI()}
         >
-          {loading ? "Loading..." : "Generate Content"}
+          {loading ? "Loading..." : "Check "}
         </button>
         <hr />
         <div>Response: {data}</div>
