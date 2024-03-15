@@ -1,6 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 function Teacher() {
@@ -15,20 +14,23 @@ function Teacher() {
       const genAI = new GoogleGenerativeAI(API_KEY);
       const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
 
-      const fileInputEl = document.querySelector("input[type=file]");
-      const imageParts = await Promise.all(
-        [...fileInputEl.files].map(fileToGenerativePart)
-      );
-      const result = await model.generateContent([
-        FIXED_INPUT_TEXT,
-        ...imageParts,
-      ]);
-      const text = result.response.text();
+      // Select each file input by its unique ID
+      const answerKeyInput = document.querySelector("#answer-key-input").files[0];
+      const answerSheetInput = document.querySelector("#answer-sheet-input").files[0];
+      const questionPaperInput = document.querySelector("#question-paper-input").files[0];
 
+      // Convert each file to the required generative part format
+      const answerKeyPart = answerKeyInput ? await fileToGenerativePart(answerKeyInput) : null;
+      const answerSheetPart = answerSheetInput ? await fileToGenerativePart(answerSheetInput) : null;
+      const questionPaperPart = questionPaperInput ? await fileToGenerativePart(questionPaperInput) : null;
+
+      // Prepare the parts array, excluding any undefined entries
+      const parts = [FIXED_INPUT_TEXT, answerKeyPart, answerSheetPart, questionPaperPart].filter(part => part !== null);
+
+      const result = await model.generateContent(parts);
+      const text = await result.response.text();
       setLoading(false);
       setData(text);
-
-      // Save data to text file
       saveDataToFile(text);
     } catch (error) {
       setLoading(false);
@@ -52,39 +54,38 @@ function Teacher() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "AnswerKey.txt";
+    a.download = "GeneratedContent.txt";
     document.body.appendChild(a);
     a.click();
-    URL.revokeObjectURL(url);
     document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   }
 
   return (
     <Container>
-      {/* ... (Other parts of your component) */}
-
       <div className="card">
-        <input type="file" />
-        {/* Input text field removed */}
+        <label htmlFor="answer-key-input">Answer Key:</label>
+        <input type="file" id="answer-key-input" />
+        <label htmlFor="answer-sheet-input">Answer Sheet:</label>
+        <input type="file" id="answer-sheet-input" />
+        <label htmlFor="question-paper-input">Question Paper:</label>
+        <input type="file" id="question-paper-input" />
 
         <button
           disabled={loading}
           onClick={() => fetchDataFromGeminiProVisionAPI()}
         >
-          {loading ? "Loading..." : "Submit Button"}
+          {loading ? "Loading..." : "Generate Content"}
         </button>
         <hr />
         <div>Response: {data}</div>
       </div>
-
-        
-
-      <Link path='/student'/>
     </Container>
   );
 }
 
 export default Teacher;
+
 
 const Container = styled.div`
   display: flex;
