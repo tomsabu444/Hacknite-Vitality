@@ -1,6 +1,6 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import { useState } from "react";
 import styled from "styled-components";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 function Teacher() {
   const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
@@ -31,7 +31,7 @@ function Teacher() {
       const text = await result.response.text();
       setLoading(false);
       setData(text);
-      saveDataToFile(text);
+      // Removed saveDataToFile(text);
     } catch (error) {
       setLoading(false);
       console.error("fetchDataFromGeminiAPI error: ", error);
@@ -47,18 +47,6 @@ function Teacher() {
     return {
       inlineData: { data: await base64EncodedDataPromise, mimeType: file.type },
     };
-  }
-
-  function saveDataToFile(data) {
-    const blob = new Blob([data], { type: "text/plain" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "GeneratedContent.txt";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
   }
 
   return (
@@ -85,7 +73,6 @@ function Teacher() {
 }
 
 export default Teacher;
-
 
 const Container = styled.div`
   display: flex;
